@@ -1,0 +1,21 @@
+{
+    "name": "infernobass7/Laravel-PrintNode",
+    "description": "Print using PrintNode in Laravel. http://www.printnode.com",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Michael Deck",
+            "email": "michael.e.deck@outlook.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "PrintNode/printnode-php": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Infernobass7\\PrintNode": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
