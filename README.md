@@ -10,7 +10,7 @@ You can pull this package in through Composer.
 composer require infernobass7/laravel-print-node
 ```
 You will need to add the following lines to `config/app.php`
-```
+```php
 'providers' => [
     ...
     Infernobass7\Laravel-PrintNode\PrintNodeServiceProvider::class,
@@ -20,7 +20,7 @@ You will need to add the following lines to `config/app.php`
 
 Next you will want to publish the config file. 
 ```
-php artisan vendor:publish
+php artisan vendor:publish --provider="Infernobass7\Laravel-PrintNode\PrintNodeServiceProvider"
 ```
 
 #Configuration
@@ -30,7 +30,7 @@ use the API Key you should not provide a password. However, if you use an email 
 provide the password too. The second section is the configuration options for printing. These will 
 be used as a default should you not specify any while creating a PrintJob. 
 
-```
+```php
 return [
     'auth' => [
         /*
@@ -67,7 +67,7 @@ return [
 
 ##Printer
 This class handles retrieving list of Printers from PrintNode.
-```
+```php
 /*
  * Will return a collection of Printer Objects 
  */
@@ -92,7 +92,7 @@ $previousJob = $printer->getPrintJob($id);
 
 ##Print Job
 This class handles retrieving and creating new PrintJobs.
-```
+```php
 /*
  * Create a new PrintJob
  */
