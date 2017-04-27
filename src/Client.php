@@ -6,7 +6,6 @@ use function GuzzleHttp\Psr7\str;
 
 class Client {
 	private $client;
-	private $authMethod = 'key';
 
 	private $username = null;
 	private $password = null;
@@ -45,8 +44,6 @@ class Client {
 
 	public function __construct() {
 		$this->client = new \GuzzleHttp\Client(['base_uri' => 'https://api.printnode.com']);
-
-		$this->authMethod = config('printnode.auth.method');
 	}
 
 	public function getAuthentication() {

@@ -13,14 +13,14 @@ You will need to add the following lines to `config/app.php`
 ```php
 'providers' => [
     ...
-    Infernobass7\Laravel-PrintNode\PrintNodeServiceProvider::class,
+    Infernobass7\PrintNode\PrintNodeServiceProvider::class,
     ...
 ]
 ```
 
 Next you will want to publish the config file. 
 ```
-php artisan vendor:publish --provider="Infernobass7\Laravel-PrintNode\PrintNodeServiceProvider"
+php artisan vendor:publish --provider="Infernobass7\PrintNode\PrintNodeServiceProvider"
 ```
 
 #Configuration
