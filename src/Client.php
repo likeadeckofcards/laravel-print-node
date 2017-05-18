@@ -78,7 +78,7 @@ class Client
 
     public function makeRequest($method, $uri, array $options = [])
     {
-        if (!array_key_exists('auth', $options)) {
+        if (! array_key_exists('auth', $options)) {
             $options['auth'] = $this->getAuthentication();
         }
 

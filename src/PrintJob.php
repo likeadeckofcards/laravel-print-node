@@ -23,7 +23,7 @@ class PrintJob extends Entity
             $this->setPrinter($printer);
         }
 
-        if (!array_key_exists('options', $attributes)) {
+        if (! array_key_exists('options', $attributes)) {
             $this->setAttribute('options', config('printnode.options'));
         }
     }
@@ -109,7 +109,7 @@ class PrintJob extends Entity
 
     public function setAuthentication($credentials, $basic = true)
     {
-        if (!array_key_exists('username', $credentials) || !array_key_exists('password', $credentials)) {
+        if (! array_key_exists('username', $credentials) || ! array_key_exists('password', $credentials)) {
             throw new InvalidCredentialsException('Credentials do not contain either the username or password.');
         }
 
@@ -155,25 +155,25 @@ class PrintJob extends Entity
         }
 
         if (array_key_exists('paper', $this->options)) {
-            if (!array_key_exists($this->options['paper'], $this->printer->capabilities['papers'])) {
+            if (! array_key_exists($this->options['paper'], $this->printer->capabilities['papers'])) {
                 throw new InvalidPrinterSettingUsedException('This Paper selection is not supported by the printer.');
             }
         }
 
         if (array_key_exists('media', $this->options)) {
-            if (!in_array($this->options['media'], $this->printer->capabilities['medias'])) {
+            if (! in_array($this->options['media'], $this->printer->capabilities['medias'])) {
                 throw new InvalidPrinterSettingUsedException('This Media selection is not supported by the printer.');
             }
         }
 
         if (array_key_exists('dpi', $this->options)) {
-            if (!in_array($this->options['dpi'], $this->printer->capabilities['dpis'])) {
+            if (! in_array($this->options['dpi'], $this->printer->capabilities['dpis'])) {
                 throw new InvalidPrinterSettingUsedException('This DPI selection is not supported by the printer.');
             }
         }
 
         if (array_key_exists('color', $this->options)) {
-            if (!$this->printer->capabilities['color'] && $this->options['color']) {
+            if (! $this->printer->capabilities['color'] && $this->options['color']) {
                 $this->setOptions(['color' => false]);
             }
         }
